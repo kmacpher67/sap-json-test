@@ -27,14 +27,3 @@ Output format:
 
 Ajax post data to: 
 https://sap-json-test.azurewebsites.net/api/HttpTriggerCSharp1?code=mI1aIRrlgFqEQgw7dT9IJeDe4FTRo3RhynsMupAQzeleVZUwLAU9zQ==
-
-<form action="https://sap-json-test.azurewebsites.net/api/HttpTriggerCSharp1?code=mI1aIRrlgFqEQgw7dT9IJeDe4FTRo3RhynsMupAQzeleVZUwLAU9zQ=="
-      method="POST" name="myForm"
-      enctype='application/json'>
-    <p><label for="name">First Name:</label>
-    <input type="text" name="name" id="name">Your Name Here!</p>
-
-    <p><label for="address">address:</label>
-    <input type="text" name="address" id="address"></p>
-
-    <input value="Submit" type="submit" >
