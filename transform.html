@@ -8,15 +8,14 @@
 Transform json document1 into 2: 
 
 
-<form action="https://sap-json-test.azurewebsites.net/api/HttpTriggerCSharp1?code=mI1aIRrlgFqEQgw7dT9IJeDe4FTRo3RhynsMupAQzeleVZUwLAU9zQ=="
-      id="form" name="form"
+<form id="form" action="https://sap-json-test.azurewebsites.net/api/HttpTriggerCSharp1?code=mI1aIRrlgFqEQgw7dT9IJeDe4FTRo3RhynsMupAQzeleVZUwLAU9zQ=="
       method="POST" 
       enctype='application/json'>
     <p><label for="name">First Name:</label>
-    <input type="text" name="name" id="name">Your Name Here!</p>
+    <input type="text" name="name" id="name" value="Your Name Here!"></p>
 
     <p><label for="address">address:</label>
-    <input type="text" name="address" id="address"></p>
+    <input type="text" name="address" id="address" value="123 anywhere"></p>
 
     <input id="submit" type="button" name="submit" value="submit">
 <form>
@@ -25,13 +24,21 @@ Transform json document1 into 2:
 <script>
     $(document).ready(function(){
         // click on button submit
+		var formData = JSON.stringify($("#form").serializeArray());
+		console.log("hooha INPUT DATA is:" + formData);
         $("#submit").on('click', function(){
             // send ajax
             $.ajax({
                 url: 'https://sap-json-test.azurewebsites.net/api/HttpTriggerCSharp1?code=mI1aIRrlgFqEQgw7dT9IJeDe4FTRo3RhynsMupAQzeleVZUwLAU9zQ==', // url where to submit the request
                 type : "POST", // type of action POST || GET
+				headers: {
+				  'Accept': 'application/json',
+				  'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+				  //'Origin': '',
+				  //'Host': 'api.producthunt.com'
+				},
                 dataType : 'json', // data type
-                data : $("#form").serialize(), // post data || get data
+                data : formData, // post data || get data
                 success : function(result) {
                     // you can see the result from the console
                     // tab of the developer tools
