@@ -11,38 +11,48 @@ Transform json document1 into 2:
 <form id="form" action="https://sap-json-test.azurewebsites.net/api/HttpTriggerCSharp1?code=mI1aIRrlgFqEQgw7dT9IJeDe4FTRo3RhynsMupAQzeleVZUwLAU9zQ=="
       method="POST" 
       enctype='application/json'>
-    <p><label for="name">First Name:</label>
-    <input type="text" name="name" id="name" value="Your Name Here!"></p>
-
-    <p><label for="address">address:</label>
-    <input type="text" name="address" id="address" value="123 anywhere"></p>
-
+	  <textarea id="foo" cols="60" rows="10">
+{
+	"name": "Roth Test Function",
+	"address": "331 Central Parkway",
+	"cityStateZip": "Warren, OH 44483",
+	"area": 43000, 
+	"contact": "Ken"
+}
+	  </textarea>
+	</p> <p> Output response </p>
+	  <textarea id="response" cols="60" rows="10">
+	  </textarea>
+	  </p>
     <input id="submit" type="button" name="submit" value="submit">
 <form>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
     $(document).ready(function(){
         // click on button submit
-		var formData = JSON.stringify($("#form").serializeArray());
-		console.log("hooha INPUT DATA is:" + formData);
         $("#submit").on('click', function(){
             // send ajax
+			console.log("send ajax INPUT DATA is:" + $('#foo').val());
             $.ajax({
                 url: 'https://sap-json-test.azurewebsites.net/api/HttpTriggerCSharp1?code=mI1aIRrlgFqEQgw7dT9IJeDe4FTRo3RhynsMupAQzeleVZUwLAU9zQ==', // url where to submit the request
                 type : "POST", // type of action POST || GET
 				headers: {
 				  'Accept': 'application/json',
-				  'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+				  'Content-Type': 'application/json'
 				  //'Origin': '',
 				  //'Host': 'api.producthunt.com'
 				},
                 dataType : 'json', // data type
-                data : formData, // post data || get data
+                data : $('#foo').val(), // post data || get data
                 success : function(result) {
                     // you can see the result from the console
                     // tab of the developer tools
-                    console.log(result);
+                    console.log(JSON.stringify(result));
+					alert(JSON.stringify(result));
+					$('#response').val(JSON.stringify(result));
                 },
                 error: function(xhr, resp, text) {
                     console.log(xhr, resp, text);
