@@ -1,0 +1,15 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_EXTENSION_VERSION": "~1",
+    "ScmType": "None",
+    "WEBSITE_AUTH_ENABLED": "False",
+    "AzureWebJobsDashboard": "DefaultEndpointsProtocol=https;AccountName=sapjsontestad4f;AccountKey=6A8B935WD4/etHQugvXwhzo0aYY2+3aoEggKZeiezoA+GN5pPMcxGxD51g+Cy28uYhq/NkarvcsghSd0puGzHg==",
+    "WEBSITE_NODE_DEFAULT_VERSION": "6.5.0",
+    "WEBSITE_CONTENTAZUREFILECONNECTIONSTRING": "DefaultEndpointsProtocol=https;AccountName=sapjsontestad4f;AccountKey=6A8B935WD4/etHQugvXwhzo0aYY2+3aoEggKZeiezoA+GN5pPMcxGxD51g+Cy28uYhq/NkarvcsghSd0puGzHg==",
+    "WEBSITE_CONTENTSHARE": "sap-json-testad4f",
+    "WEBSITE_SITE_NAME": "sap-json-test",
+    "WEBSITE_SLOT_NAME": "Production",
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=sapjsontestad4f;AccountKey=6A8B935WD4/etHQugvXwhzo0aYY2+3aoEggKZeiezoA+GN5pPMcxGxD51g+Cy28uYhq/NkarvcsghSd0puGzHg=="
+  }
+}
